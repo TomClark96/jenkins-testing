@@ -14,9 +14,6 @@ pipeline {
                 script {
                     def jsonString = "{"ucdDescription":"${params.ucdVersionDescription}"}"
                     def jsonObj = readJSON text: jsonString
-
-                    assert props['ucdDescription'] == "${params.ucdVersionDescription}"
-                    sh "echo ${jsonObj.ucdDescription}"
                 }
             }
         }

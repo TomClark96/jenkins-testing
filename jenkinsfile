@@ -6,13 +6,13 @@ pipeline {
     stages {
         stage('Echo Parms') {
             steps {
-                echo "$params.ucdVersionDescription"
+                echo "${params.ucdVersionDescription}"
                 }
             }
         stage('Create JSON') {
             steps {
                 script {
-                    def jsonString = '{"ucdDescription":"$params.ucdVersionDescription"}'
+                    def jsonString = '{"ucdDescription":"${params.ucdVersionDescription}"}'
                     def jsonObj = readJSON text: jsonString
 
                     sh "echo ${jsonObj.ucdDescription}"

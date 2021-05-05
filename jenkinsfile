@@ -11,10 +11,12 @@ pipeline {
             }
         stage('Create JSON') {
             steps {
-                def jsonString = '{"ucdDescription":"$params.ucdVersionDescription"}'
-                def jsonObj = readJSON text: jsonString
+                script {
+                    def jsonString = '{"ucdDescription":"$params.ucdVersionDescription"}'
+                    def jsonObj = readJSON text: jsonString
 
-                sh "echo ${jsonObj.ucdDescription}"
+                    sh "echo ${jsonObj.ucdDescription}"
+                }
             }
         }
     }

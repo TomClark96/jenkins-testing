@@ -15,7 +15,7 @@ pipeline {
                     def jsonString = "{"ucdDescription":"${params.ucdVersionDescription}"}"
                     def jsonObj = readJSON text: jsonString
 
-                    sh "echo ${jsonObj.ucdDescription}"
+                    sh "echo ${jsonObj.ucdVersionDescription}"
                 }
             }
         }

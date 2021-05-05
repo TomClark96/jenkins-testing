@@ -4,9 +4,9 @@ pipeline {
         string(name: 'UCDVersionDescription', description: 'Please add a description')
     }
     stages {
-        stage('Tom Test') {
+        stage('Build') {
             steps {
-                echo 'Hello Tom'
+                echo "$params.UCDVersionDescription"
                 }
             }
         }

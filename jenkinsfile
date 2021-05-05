@@ -1,13 +1,21 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'UCDVersionDescription', description: 'Please add a description')
+        string(name: 'ucdVersionDescription', description: 'Please add a description')
     }
     stages {
-        stage('Build') {
+        stage('Echo Parms') {
             steps {
-                echo "$params.UCDVersionDescription"
+                echo "$params.ucdVersionDescription"
                 }
             }
+        stage('Create JSON') {
+            steps {
+                def jsonString = '{"ucdDescription":"$params.ucdVersionDescription"}'
+                def jsonObj = readJSON text: jsonString
+
+                sh "echo ${jsonObj.ucdDescription}"
+            }
+        }
         }
     }

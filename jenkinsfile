@@ -16,6 +16,8 @@ pipeline {
                     def jsonString = '{"ucdDescription": "valueFromBuild" }'
                     def jsonObj = readJSON text: jsonString
                     assert jsonObj.ucdDescription == 'valueFromBuild'
+
+                    sh "echo ${jsonObj.ucdDescription}"
                 }
             }
         }

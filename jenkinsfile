@@ -15,7 +15,7 @@ pipeline {
                     def jsonDescription = ['ucdDescription': "${params.ucdVersionDescription}"]
                     writeJSON file: 'data.json', json: jsonDescription
                     def read = readJSON file: 'data.json'
-                    echo ucdDescription
+                    assert read.ucdDescription == 'Patch123'
                 }
             }
         }

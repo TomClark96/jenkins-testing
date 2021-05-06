@@ -11,7 +11,9 @@ pipeline {
             }
         stage('Create JSON') {
             steps {
-                echo "{"ucdDescription": "$(params.ucdVersionDescription)}"
+                script {
+                    jsonDescription = "{"ucdDescription": "$(params.ucdVersionDescription)}"
+                    echo jsonDescription
                 }
             }
         }

@@ -12,8 +12,7 @@ pipeline {
         stage('Create JSON') {
             steps {
                 script {
-                    def jsonDescription = {"properties":
-                                            ['description': "${params.ucdVersionDescription}"]}
+                    def jsonDescription = ['description': "${params.ucdVersionDescription}"]
                     writeJSON file: 'data.json', json: jsonDescription
                     def read = readJSON file: 'data.json'
                     echo read.description

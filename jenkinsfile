@@ -13,9 +13,9 @@ pipeline {
             steps {
                 script {
                     def jsonString = "{"ucdDescription": $params.ucdVersionDescription}"
-                    def jsonObj = readJSON text: jsonString
+                    echo jsonString
 
-                    sh "echo ${jsonObj.ucdDescription}"
+                    //sh "echo ${jsonObj.ucdDescription}"
                 }
             }
         }

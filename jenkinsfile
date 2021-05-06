@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     def jsonDescription = ['ucdDescription': "${params.ucdVersionDescription}"]
-                    writeJson file: 'data.json', json: jsonDescription
+                    writeJSON file: 'data.json', json: jsonDescription
                     def read = readJSON file: 'data.json'
                 }
             }

@@ -24,7 +24,7 @@ pipeline {
                 script {
                     sh "git add data.json"
                     sh "git commit -m 'Adding data.json to master for use later'"
-                    sh "git push https://github.com/TomClark96/jenkins-testing"
+                    sh "git push https://github.com/TomClark96/jenkins-testing master"
                 }
             }
         }

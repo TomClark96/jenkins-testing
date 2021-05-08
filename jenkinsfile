@@ -20,10 +20,12 @@ pipeline {
             }
         }
         stage('Push data.json to github') {
-            script {
-                sh "git add data.json"
-                sh "git commit -m 'Adding data.json to master for use later'"
-                git push "https://github.com/TomClark96/jenkins-testing"
+            steps {
+                script {
+                    sh "git add data.json"
+                    sh "git commit -m 'Adding data.json to master for use later'"
+                    git push "https://github.com/TomClark96/jenkins-testing"
+                }
             }
         }
     }
